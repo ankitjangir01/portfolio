@@ -1,0 +1,6 @@
+body{
+    background-image: url("./../assets/AdobeStock_340939073.jpeg"), url("./../assets/AdobeStock_364367293.jpeg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+}
