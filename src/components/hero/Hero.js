@@ -6,6 +6,7 @@ import './../../style/hero.css'
 import { Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
+import Skills from './Skills'
 
 const Hero = () => {
     return (
@@ -61,6 +62,9 @@ const Hero = () => {
                     {/* <HeroObject /> */}
                 </div>
             </div>
+
+            {/* -----------------------skills carousel -------------------------------------- */}
+            <Skills />
         </div>
     )
 }
