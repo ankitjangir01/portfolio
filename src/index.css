@@ -28,3 +28,8 @@ code {
   box-shadow: 24;
   padding: 4;
 }
+
+.skills-section{
+  /* height: var(--maxHeight); */
+  align-items: center;
+}
