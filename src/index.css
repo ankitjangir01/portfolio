@@ -17,19 +17,31 @@ code {
     monospace;
 }
 
+.IDECard{
+  background-color: rgb(14, 0, 36);
+  border-radius: 26px;
+  padding: 26px;
+  width: fit-content;
+  color: white;
+  text-align: start;
+  display: inline-block;
+  box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.26);
+}
+
+.hero {
+  background-image: linear-gradient(to bottom right, rgba(238, 145, 241, 0.527), rgb(255, 255, 255), rgb(243, 245, 142), rgb(255, 255, 255), rgb(245, 236, 120));
+}
+
 .modalCard {
   background-color: coral;
   position: absolute;
   top: 50%;
   left: 50%;
-  /* width: 50%; */
-  /* width: 400; */
   border: '2px solid #000';
   box-shadow: 24;
   padding: 4;
 }
 
 .skills-section{
-  /* height: var(--maxHeight); */
   align-items: center;
 }

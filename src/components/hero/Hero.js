@@ -2,19 +2,18 @@ import React from 'react'
 import hero from './../../assets/hero.png'
 import HeroObject from './HeroObject.js'
 import IDECard from './IDECard.js'
-import './../../style/hero.css'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import Skills from './Skills'
+import './../../index.css'
 
 const Hero = () => {
     return (
         <div className='hero'>
-            <div className='flex flex-row flex-wrap'>
-                <div className='hero-text flex-auto text-left' style={{ 'width': '60%', 'margin': 'auto', 'marginLeft': 30 }}>
+            <div className='flex flex-wrap'>
+                <div className='hero-text flex-auto mx-auto items-center' style={{ 'margin': 'auto' }}>
                     <motion.div
                         initial={{
-                            // y: -1,
                             opacity: 0,
                             x: -200
                         }}
@@ -29,7 +28,7 @@ const Hero = () => {
                             delay: 0.5,
                             duration: 1
                         }}
-                        className='text-8xl font-extrabold m-4'
+                        className='text-7xl font-extrabold my-auto inline-block'
                     >
                         <motion.div
                             animate={{
@@ -44,7 +43,8 @@ const Hero = () => {
                             sequence={[
                                 "Ankit Jangir"
                             ]}
-                            speed={10}
+                            speed={5}
+                            cursor={false}
                         >
                         </TypeAnimation>
                         </motion.div>
@@ -66,7 +66,7 @@ const Hero = () => {
                             delay: 1.5,
                             duration: 1
                         }}
-                        tran
+                        className='my-8'
                     >
                         <IDECard />
                     </motion.div>
