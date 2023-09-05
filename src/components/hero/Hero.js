@@ -6,12 +6,11 @@ import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import Skills from './Skills'
 import './../../index.css'
-import { NavDrawer } from '../NavDrawer'
+import Education from '../Education'
 
 const Hero = () => {
     return (
         <div className='hero'>
-            <NavDrawer/>
             <div className='flex flex-wrap'>
                 <div className='hero-text flex-auto mx-auto items-center' style={{ 'margin': 'auto' }}>
                     <motion.div
@@ -78,8 +77,7 @@ const Hero = () => {
                     {/* <HeroObject /> */}
                 </div>
             </div>
-
-            {/* -----------------------skills carousel -------------------------------------- */}
+            <Education/>
             <Skills />
         </div>
     )
