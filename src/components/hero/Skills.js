@@ -16,19 +16,24 @@ import sql from './../../assets/sql.svg'
 import datastructures from './../../assets/datastructures.svg'
 import cpp from './../../assets/cpp.svg'
 import github from './../../assets/github.svg'
-import { motion } from 'framer-motion'
+import { easeInOut, motion, useInView } from 'framer-motion'
 import downArrow from './../../assets/down-arrow.svg'
 
 const Skills = () => {
-    const ref = useRef(null);
-    const [skillsDisplay, setSkillsDisplay] = useState('hideSkills');
+    const [showSkills, setShowSkills] = useState(false);
+    const frontendRef = useRef(null);
+    const backendRef = useRef(null);
+    const othersRef = useRef(null);
+    const frontendInView = useInView(frontendRef);
+    const backendInView = useInView(backendRef);
+    const othersInView = useInView(othersRef);
 
-    const skillsVarient = {
-        showSkills: {
-            display: 'block'
+    const varients = {
+        show: {
+            height: '100%'
         },
-        hideSkills: {
-            display: 'none'
+        hide: {
+            height: 0
         }
     }
 
@@ -60,25 +65,32 @@ const Skills = () => {
 
     return (
         <>
-            <div className='flex text-6xl font-extrabold items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #ff7c7c, #fe7eff, #e8a8ff)' }}>
+            <div className='flex text-6xl font-extrabold items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #81f8ff, #7fffc4, #52fd90)' }}>
                 <span className='mx-auto flex p-8 align-middle cursor-pointer'
-                onClick={() => {skillsDisplay === 'hideSkills' ? setSkillsDisplay('showSkills') : setSkillsDisplay('hideSkills')}}
+                    onClick={() => { showSkills ? setShowSkills(false) : setShowSkills(true) }}
                 >
                     Technologies I Use
-                    <img src={downArrow} style={{height: '1.3em'}}/>
-
+                    <img src={downArrow} style={{ height: '1.3em' }} />
                 </span>
             </div>
-            <motion.div className='overflow-hidden'
-            varients={skillsVarient}
-                animate={skillsDisplay}
-            >
+            <motion.div className='overflow-hidden'>
                 {/* ==============frontend================= */}
-                <div className='flex skills-section h-fit md:h-screen' ref={ref} style={{ backgroundColor: '#9acd32' }}>
-                    <div className='text-8xl font-extrabold rotate-180 px-4' style={{ 'writingMode': 'vertical-lr' }}>
+                <motion.div className='flex skills-section h-fit md:h-screen' ref={frontendRef} style={{ backgroundColor: '#9acd32' }}>
+                    <div className='text-8xl font-extrabold rotate-180 px-4'
+                        style={{
+                            writingMode: 'vertical-lr',
+                            transform: frontendInView ? "none" : "translateX(-200px)",
+                            opacity: frontendInView ? 1 : 0,
+                            transition: "all 1s"
+                        }}>
                         Frontend
                     </div>
-                    <div sx={{ 'display': 'inline-block' }}>
+                    <div style={{
+                        display: 'inline-block',
+                        transform: frontendInView ? "none" : "translateX(200px)",
+                        opacity: frontendInView ? 1 : 0,
+                        transition: "all 1s"
+                    }}>
                         {frontend.map(skill => (
                             <div className='p-10 inline-block' style={{ 'width': 200 }}>
                                 <img src={skill.art} alt={skill.title} />
@@ -86,27 +98,56 @@ const Skills = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
                 {/* =================backend==================== */}
-                <div className='flex skills-section h-fit md:h-screen' style={{ backgroundColor: '#ffd271' }}>
-                    <div sx={{ 'display': 'inline-block' }} className='grow'>
+                <div className='flex skills-section h-fit md:h-screen' ref={backendRef} style={{ backgroundColor: '#ffd271' }}>
+                    <div
+                        style={{
+                            display: 'inline-block',
+                            transform: backendInView ? "none" : "translateX(-200px)",
+                            opacity: backendInView ? 1 : 0,
+                            transition: "all 1s"
+                        }}
+                        className='grow'>
                         {backend.map(skill => (
-                            <div className='p-10 inline-block' style={{ 'width': 200 }}>
+                            <div className='p-10 inline-block'
+                                style={{ 'width': 200 }}>
                                 <img src={skill.art} alt={skill.title} />
                                 <h3>{skill.title}</h3>
                             </div>
                         ))}
                     </div>
-                    <div className='text-8xl font-extrabold px-4 flex-none' style={{ 'writingMode': 'vertical-lr' }}>
+                    <div className='text-8xl font-extrabold px-4 flex-none'
+                        style={{
+                            writingMode: 'vertical-lr',
+                            transform: backendInView ? "none" : "translateX(200px)",
+                            opacity: backendInView ? 1 : 0,
+                            transition: "all 1s"
+                        }}
+                    >
                         Backend
                     </div>
                 </div>
                 {/* ===================a few more==================== */}
-                <div className='flex skills-section h-fit md:h-screen' style={{ backgroundColor: '#e5a9d9' }}>
-                    <div className='text-8xl font-extrabold rotate-180 px-4' style={{ 'writingMode': 'vertical-lr' }}>
+                <div className='flex skills-section h-fit md:h-screen' ref={othersRef} style={{ backgroundColor: '#e5a9d9' }}>
+                    <div className='text-8xl font-extrabold rotate-180 px-4'
+                        style={{
+                            writingMode: 'vertical-lr',
+                            transform: othersInView ? "none" : "translateX(-200px)",
+                            opacity: othersInView ? 1 : 0,
+                            transition: "all 1s"
+                        }}
+                    >
                         More...
                     </div>
-                    <div sx={{ 'display': 'inline-block' }}>
+                    <div
+                        style={{
+                            display: 'inline-block',
+                            transform: othersInView ? "none" : "translateX(200px)",
+                            opacity: othersInView ? 1 : 0,
+                            transition: "all 1s"
+                        }}
+                    >
                         {more.map(skill => (
                             <div className='p-10 inline-block' style={{ 'width': 200 }}>
                                 <img src={skill.art} alt={skill.title} />
