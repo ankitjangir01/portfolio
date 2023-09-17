@@ -65,8 +65,8 @@ const Skills = () => {
 
     return (
         <>
-            <div className='flex text-6xl font-extrabold items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #81f8ff, #7fffc4, #52fd90)' }}>
-                <span className='mx-auto flex p-8 align-middle cursor-pointer'
+            <div className='flex text-4xl sm:text-6xl font-extrabold items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #81f8ff, #7fffc4, #52fd90)' }}>
+                <span className='flex-col md:flex-row mx-auto flex p-4 sm:p-8 align-middle cursor-pointer'
                     onClick={() => { showSkills ? setShowSkills(false) : setShowSkills(true) }}
                 >
                     Technologies I Use
@@ -92,7 +92,7 @@ const Skills = () => {
                         transition: "all 1s"
                     }}>
                         {frontend.map(skill => (
-                            <div className='p-10 inline-block' style={{ 'width': 200 }}>
+                            <div className='p-6 sm:p-10 inline-block w-[130px] sm:w-[200px]'>
                                 <img src={skill.art} alt={skill.title} />
                                 <h3>{skill.title}</h3>
                             </div>
@@ -110,8 +110,7 @@ const Skills = () => {
                         }}
                         className='grow'>
                         {backend.map(skill => (
-                            <div className='p-10 inline-block'
-                                style={{ 'width': 200 }}>
+                            <div className='p-6 sm:p-10 inline-block w-[130px] sm:w-[200px]'>
                                 <img src={skill.art} alt={skill.title} />
                                 <h3>{skill.title}</h3>
                             </div>
@@ -149,7 +148,7 @@ const Skills = () => {
                         }}
                     >
                         {more.map(skill => (
-                            <div className='p-10 inline-block' style={{ 'width': 200 }}>
+                            <div className='p-6 sm:p-10 inline-block w-[130px] sm:w-[200px]'>
                                 <img src={skill.art} alt={skill.title} />
                                 <h3>{skill.title}</h3>
                             </div>

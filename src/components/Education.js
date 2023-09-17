@@ -22,19 +22,19 @@ const Education = () => {
     }
 
     return (
-        <div className='flex text-6xl font-extrabold items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #ff7c7c, #fe7eff, #e8a8ff)' }}>
-            <span className='mx-auto flex p-8 align-middle cursor-pointer'
+        <div className='flex items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #ff7c7c, #fe7eff, #e8a8ff)' }}>
+            <span className='text-4xl sm:text-6xl font-extrabold mx-auto flex p-4 md:p-8 align-middle cursor-pointer'
                 onClick={() => { eduState === "beforeClick" ? setEduState("afterClick") : setEduState("beforeClick") }}
             >
                 <span>
                     EDUCATI
                 </span>
-                <motion.span className='w-16 h-16 bg-black rounded-full inline self-center overflow-hidden'
+                <motion.span className='w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full inline self-center overflow-hidden'
                     variants={eduVarient}
                     animate={eduState}
                 >
-                    <motion.div className='flex p-8'>
-                        <img src={nitrrlogo} style={{ maxHeight: '130px' }} />
+                    <motion.div className='flex p-4 sm:p-8'>
+                        <img src={nitrrlogo} style={{ maxHeight: '130px' }} className='hidden md:block'/>
                         <div className='text-xl font-bold ml-4 text-left'>
                             National Institute of Technology (NIT) <br />
                             Raipur, India
