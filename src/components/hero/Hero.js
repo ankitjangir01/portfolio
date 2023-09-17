@@ -37,7 +37,7 @@ const Hero = () => {
                             delay: 0.5,
                             duration: 1
                         }}
-                        className='text-7xl font-extrabold my-auto p-6 inline-block'
+                        className='text-7xl font-extrabold my-auto pt-16 sm:pt-0 inline-block'
                     >
                         <motion.div
                             animate={{
