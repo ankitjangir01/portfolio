@@ -16,7 +16,7 @@ import sql from './../../assets/sql.svg'
 import datastructures from './../../assets/datastructures.svg'
 import cpp from './../../assets/cpp.svg'
 import github from './../../assets/github.svg'
-import { easeInOut, motion, useInView } from 'framer-motion'
+import { easeIn, motion, useInView } from 'framer-motion'
 import downArrow from './../../assets/down-arrow.svg'
 
 const Skills = () => {
@@ -27,15 +27,6 @@ const Skills = () => {
     const frontendInView = useInView(frontendRef);
     const backendInView = useInView(backendRef);
     const othersInView = useInView(othersRef);
-
-    const varients = {
-        show: {
-            height: '100%'
-        },
-        hide: {
-            height: 0
-        }
-    }
 
     const frontend = [
         { id: 1, art: reactjs, title: 'ReactJS', level: 5 },
@@ -70,10 +61,12 @@ const Skills = () => {
                     onClick={() => { showSkills ? setShowSkills(false) : setShowSkills(true) }}
                 >
                     Technologies I Use
-                    <img src={downArrow} style={{ height: '1.3em' }} />
+                    <motion.img src={downArrow} style={{ height: '1.3em' }}
+                    animate={showSkills ? {rotate: 180, transition: {ease: 'easeInOut'}} : {rotate: 0, transition: {ease: 'easeInOut'}}}
+                    />
                 </span>
             </div>
-            <motion.div className='overflow-hidden'>
+            <motion.div className="overflow-hidden" style={showSkills? {display: 'block'} : {display: 'none'}}>
                 {/* ==============frontend================= */}
                 <motion.div className='flex skills-section h-fit md:h-screen' ref={frontendRef} style={{ backgroundColor: '#9acd32' }}>
                     <div className='text-8xl font-extrabold rotate-180 px-4'

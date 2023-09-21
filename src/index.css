@@ -29,7 +29,7 @@ code {
 }
 
 .hero {
-  background-image: linear-gradient(to bottom right, rgba(238, 145, 241, 0.527), rgb(255, 255, 255), rgb(243, 245, 142), rgb(255, 255, 255), rgb(245, 236, 120));
+  background-image: linear-gradient(to bottom right, rgba(238, 145, 241, 0.527), rgb(255, 255, 255), rgb(243, 245, 142), rgb(255, 255, 255));
 }
 
 .modalCard {
