@@ -18,7 +18,7 @@ const Hero = () => {
     return (
         <>
         <div className='hero'>
-            <Alert color="amber" className='sm:hidden text-white absolute' open={desktopWarnOpen} onClose={() => setDesktopWarnOpen(false)}>
+            <Alert color="amber" className='sm:hidden text-white absolute z-[1]' open={desktopWarnOpen} onClose={() => setDesktopWarnOpen(false)}>
                 view in desktop for best experience
             </Alert>
             <div className='flex h-screen'>
