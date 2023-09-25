@@ -56,8 +56,8 @@ const Skills = () => {
 
     return (
         <>
-            <div className='flex text-4xl sm:text-6xl font-extrabold items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #81f8ff, #7fffc4, #52fd90)' }}>
-                <span className='flex-col md:flex-row mx-auto flex p-4 sm:p-8 align-middle cursor-pointer'
+            <div className='hero-bar' style={{ backgroundImage: 'linear-gradient(45deg, #81f8ff, #7fffc4, #52fd90)' }}>
+                <span className='flex-col md:flex-row mx-auto flex align-middle cursor-pointer'
                     onClick={() => { showSkills ? setShowSkills(false) : setShowSkills(true) }}
                 >
                     Technologies I Use
