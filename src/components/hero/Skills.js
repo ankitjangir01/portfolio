@@ -16,7 +16,7 @@ import sql from './../../assets/sql.svg'
 import datastructures from './../../assets/datastructures.svg'
 import cpp from './../../assets/cpp.svg'
 import github from './../../assets/github.svg'
-import { easeIn, motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import downArrow from './../../assets/down-arrow.svg'
 
 const Skills = () => {

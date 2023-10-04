@@ -1,44 +1,55 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
+import ProjectsParallax from './ProjectsParallax'
 
 const Projects = () => {
+    const [projectsOpen, setProjectsOpen] = useState(false);
 
-    const [eduState, setEduState] = useState("beforeClick");
-
-    const eduVarient = {
-        beforeClick: {
+    const projectsVarient = {
+        false: {
             y: [-4, 4, -4],
             transition: {
                 duration: 1.5,
-                repeat: Infinity
+                repeat: Infinity,
+                scrollY: -400
             }
         },
-        afterClick: {
+        true: {
             backgroundColor: '#ffffff',
             width: '90vw',
             height: '90vh',
-            border: 'solid 12px'
+            border: 'solid 12px',
+            transition: {
+                scrollY: 400
+            }
         }
     }
 
-  return (
-    <div className='hero-bar overflow-hidden' style={{backgroundImage: 'linear-gradient(45deg, #3987ff, #9dc3ff, #84f9ff)'}}>
-        <span className='mx-auto flex align-middle cursor-pointer items-center'
-                onClick={() => { eduState === "beforeClick" ? setEduState("afterClick") : setEduState("beforeClick"); documen.scrollBy(0, 500) }}
+    const toggleProjects = () => {
+        if (!projectsOpen) {
+            setProjectsOpen(true);
+        }
+        else {
+            setProjectsOpen(false);
+        }
+    }
+
+    return (
+        <div className='hero-bar overflow-hidden' style={{ backgroundImage: 'linear-gradient(45deg, #3987ff, #9dc3ff, #84f9ff)' }}>
+            <span className='mx-auto flex align-middle cursor-pointer items-center'
+                onClick={toggleProjects}
             >
                 PR
                 <motion.span className='w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full inline overflow-hidden'
-                    variants={eduVarient}
-                    animate={eduState}
+                    variants={projectsVarient}
+                    animate={projectsOpen.toString()}
                 >
-                    <motion.div className='flex p-4 sm:p-8'>
-                        
-                    </motion.div>
+                    <ProjectsParallax />
                 </motion.span>
                 JECTS
             </span>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Projects
