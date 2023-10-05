@@ -11,6 +11,7 @@ import linkedinIcon from './../../assets/linkedin.svg'
 import xIcon from './../../assets/x.png'
 import githubIcon from './../../assets/githubIcon.svg'
 import Background from './Background'
+import Projects from '../Projects'
 
 const Hero = () => {
     const [desktopWarnOpen, setDesktopWarnOpen] = useState(true);
@@ -128,12 +129,10 @@ const Hero = () => {
                         </motion.div>
                     </motion.div>
                 </div>
-                {/* <div className='hero-image flex-auto object-center'>
-                    <img src={hero} style={{ 'maxHeight': '100vh', 'paddingTop': 14 }} />
-                </div> */}
             </div>
         </div>
             <Education />
+            <Projects />
             <Skills />
             </>
     )

@@ -22,8 +22,8 @@ const Education = () => {
     }
 
     return (
-        <div className='flex items-center align-middle' style={{ backgroundImage: 'linear-gradient(45deg, #ff7c7c, #fe7eff, #e8a8ff)' }}>
-            <span className='text-4xl sm:text-6xl font-extrabold mx-auto flex p-4 md:p-8 align-middle cursor-pointer'
+        <div className='hero-bar'>
+            <span className='mx-auto flex items-center cursor-pointer'
                 onClick={() => { eduState === "beforeClick" ? setEduState("afterClick") : setEduState("beforeClick") }}
             >
                 <span>
