@@ -18,7 +18,7 @@ const Hero = () => {
 
     return (
         <>
-        <div className='hero'>
+        <div className='bg-[#bf58ff]'>
             <Alert color="amber" className='sm:hidden text-white absolute z-[1]' open={desktopWarnOpen} onClose={() => setDesktopWarnOpen(false)}>
                 view in desktop for best experience
             </Alert>
@@ -41,19 +41,9 @@ const Hero = () => {
                             delay: 0.2,
                             duration: 1
                         }}
-                        className='text-7xl font-extrabold my-auto pt-16 sm:pt-0 inline-block z-[1] relative'
+                        className='text-8xl md:text-9xl font-extrabold my-auto inline-block z-[1] relative'
                     >
-                        <motion.div
-                            animate={{
-                                color: ['#000000', '#2e2e2e', '#000000'],
-                            }}
-                            transition={{
-                                duration: 5,
-                                repeat: Infinity
-                            }}
-                        >
-                            Ankit Jangir
-                        </motion.div>
+                        ANKIT JANGIR
                     </motion.div>
 
                     {/* ============== IDE Card + Social Media ========================== */}
@@ -78,7 +68,7 @@ const Hero = () => {
                             <IDECard />
                         </div>
                         {/* social media handles======================= */}
-                        <motion.div className='block h-8 mt-4'
+                        {/* <motion.div className='block h-8 mt-4'
                             initial={{
                                 opacity: 0,
                                 y: 50
@@ -126,7 +116,7 @@ const Hero = () => {
                                 }}>
                                 <img src={githubIcon} />
                             </motion.a>
-                        </motion.div>
+                        </motion.div> */}
                     </motion.div>
                 </div>
             </div>
