@@ -36,7 +36,11 @@ const Projects = () => {
 
     return (
         <div className='hero-bar overflow-hidden' style={{ backgroundImage: 'linear-gradient(45deg, #3987ff, #9dc3ff, #84f9ff)' }}>
+<<<<<<< HEAD
             <span className='mx-auto flex align-middle cursor-pointer items-center'
+=======
+            <span className='mx-auto flex align-middle cursor-pointer items-center p-2'
+>>>>>>> master
                 onClick={toggleProjects}
             >
                 PR
@@ -44,7 +48,11 @@ const Projects = () => {
                     variants={projectsVarient}
                     animate={projectsOpen.toString()}
                 >
+<<<<<<< HEAD
                     <ProjectsParallax />
+=======
+                    <ProjectsParallax open={projectsOpen}/>
+>>>>>>> master
                 </motion.span>
                 JECTS
             </span>

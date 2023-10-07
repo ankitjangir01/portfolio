@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  .hero-bar{
+    @apply flex justify-center text-4xl sm:text-6xl font-extrabold p-4 md:p-8;
+    background-image: linear-gradient(45deg, #ff7c7c, #fe7eff, #e8a8ff);
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,7 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  scroll-behavior: smooth;
 }
 
 code {
@@ -29,7 +36,7 @@ code {
 }
 
 .hero {
-  background-image: linear-gradient(to bottom right, rgba(238, 145, 241, 0.527), rgb(255, 255, 255), rgb(243, 245, 142), rgb(255, 255, 255), rgb(245, 236, 120));
+  background-image: linear-gradient(to bottom right, rgba(238, 145, 241, 0.527), rgb(255, 255, 255), rgb(243, 245, 142), rgb(255, 255, 255));
 }
 
 .modalCard {
@@ -44,4 +51,29 @@ code {
 
 .skills-section{
   align-items: center;
+}
+
+.parallax-gutter::-webkit-scrollbar{
+  display: none;  /* Safari and Chrome */
+}
+
+.parallax-gutter {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.parallax-gutter section{
+  scroll-snap-align: start;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #33ff00;
+  transform-origin: 0%;
 }
