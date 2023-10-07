@@ -23,7 +23,7 @@ const projectArr = [
     }
 ]
 
-const ProjectsParallax = () => {
+const ProjectsParallax = (props) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ container: ref })
 
@@ -76,7 +76,7 @@ const ProjectsParallax = () => {
     }
 
     return (
-        <div className='parallax-gutter p-4 overflow-scroll h-full' ref={ref}>
+        <div className={`parallax-gutter p-4 overflow-scroll h-full ${props.open ? "" : "invisible"}`} ref={ref}>
             <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
             {projectArr.map(({ image, live, repo }) => (
                 <Image src={image} live={live} repo={repo} />

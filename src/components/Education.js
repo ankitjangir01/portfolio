@@ -17,13 +17,14 @@ const Education = () => {
             backgroundColor: '#ffffff',
             width: 'max-content',
             height: 'fit-content',
-            border: 'solid 12px'
+            border: 'solid 12px',
+            // maxWidth: '90vh',
         }
     }
 
     return (
         <div className='hero-bar'>
-            <span className='mx-auto flex items-center cursor-pointer'
+            <span className=' flex items-center cursor-pointer overflow-hidden p-2'
                 onClick={() => { eduState === "beforeClick" ? setEduState("afterClick") : setEduState("beforeClick") }}
             >
                 <span>
