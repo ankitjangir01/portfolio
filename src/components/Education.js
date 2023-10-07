@@ -18,7 +18,6 @@ const Education = () => {
             width: 'max-content',
             height: 'fit-content',
             border: 'solid 12px',
-            // maxWidth: '90vh',
         }
     }
 
