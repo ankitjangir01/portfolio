@@ -22,7 +22,7 @@ const Education = () => {
     }
 
     return (
-        <div className='hero-bar overflow-hidden'>
+        <div className='hero-bar overflow-hidden' style={{ backgroundImage: 'linear-gradient(45deg, #ff7c7c, #fe7eff, #e8a8ff)' }}>
             <span className='flex hover:cursor-pointer items-center' onClick={() => open ? setOpen(false) : setOpen(true)}>
                 EDUCATI
                 <motion.span className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full overflow-hidden"
