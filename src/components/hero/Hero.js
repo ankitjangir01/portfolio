@@ -12,6 +12,7 @@ import xIcon from './../../assets/x.png'
 import githubIcon from './../../assets/githubIcon.svg'
 import Background from './Background'
 import Projects from '../Projects'
+import Coding from '../Coding'
 
 const Hero = () => {
     const [desktopWarnOpen, setDesktopWarnOpen] = useState(true);
@@ -123,6 +124,7 @@ const Hero = () => {
         </div>
             <Education />
             <Projects />
+            <Coding />
             <Skills />
             </>
     )
