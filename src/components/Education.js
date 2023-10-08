@@ -23,7 +23,7 @@ const Education = () => {
 
     return (
         <div className='hero-bar overflow-hidden'>
-            <span className='flex hover:cursor-pointer' onClick={() => open ? setOpen(false) : setOpen(true)}>
+            <span className='flex hover:cursor-pointer items-center' onClick={() => open ? setOpen(false) : setOpen(true)}>
                 EDUCATI
                 <motion.span className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full overflow-hidden"
                     variants={eduVariant}
