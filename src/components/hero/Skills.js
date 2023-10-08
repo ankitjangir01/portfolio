@@ -14,13 +14,16 @@ import springboot from './../../assets/springboot.svg'
 import mongodb from './../../assets/mongodb.svg'
 import sql from './../../assets/sql.svg'
 import datastructures from './../../assets/datastructures.svg'
+import algorithms from './../../assets/algorithms.svg'
 import cpp from './../../assets/cpp.svg'
+import git from './../../assets/git.svg'
 import github from './../../assets/github.svg'
+import vscode from './../../assets/vscode.svg'
 import { motion, useInView } from 'framer-motion'
 import downArrow from './../../assets/down-arrow.svg'
 
 const Skills = () => {
-    const [showSkills, setShowSkills] = useState(false);
+    const [showSkills, setShowSkills] = useState(true);
     const frontendRef = useRef(null);
     const backendRef = useRef(null);
     const othersRef = useRef(null);
@@ -50,25 +53,24 @@ const Skills = () => {
 
     const more = [
         { id: 1, art: datastructures, title: 'Data Structures', level: 5 },
+        { id: 2, art: algorithms, title: 'Algorithms', level: 5 },
         { id: 3, art: cpp, title: 'C++', level: 5 },
-        { id: 4, art: github, title: 'GitHub', level: 4 }
+        { id: 4, art: git, title: 'Git', level: 5 },
+        { id: 5, art: github, title: 'GitHub', level: 4 },
+        { id: 6, art: vscode, title: 'VS Code', level: 4 }
     ]
 
     return (
         <>
-            <div className='hero-bar' style={{ backgroundImage: 'linear-gradient(45deg, #81f8ff, #7fffc4, #52fd90)' }}>
-                <span className='flex-col md:flex-row mx-auto flex align-middle cursor-pointer'
-                    onClick={() => { showSkills ? setShowSkills(false) : setShowSkills(true) }}
-                >
+            <div className='hero-bar' style={{ backgroundColor: '#9acd32', borderBottom: 'dasheds'}}>
+                <span className='flex-col md:flex-row mx-auto flex align-middle cursor-pointer'>
                     Technologies I Use
-                    <motion.img src={downArrow} style={{ height: '1.3em' }}
-                    animate={showSkills ? {rotate: 180, transition: {ease: 'easeInOut'}} : {rotate: 0, transition: {ease: 'easeInOut'}}}
-                    />
+                    <img src={downArrow} style={{ height: '1.3em' }} />
                 </span>
             </div>
-            <motion.div className="overflow-hidden" style={showSkills? {display: 'block'} : {display: 'none'}}>
+            <motion.div className="skills-container overflow-hidden">
                 {/* ==============frontend================= */}
-                <motion.div className='flex skills-section h-fit md:h-screen' ref={frontendRef} style={{ backgroundColor: '#9acd32' }}>
+                <section className='flex skills-section h-fit md:h-screen' ref={frontendRef} style={{ backgroundColor: '#9acd32' }}>
                     <div className='text-8xl font-extrabold rotate-180 px-4'
                         style={{
                             writingMode: 'vertical-lr',
@@ -91,9 +93,9 @@ const Skills = () => {
                             </div>
                         ))}
                     </div>
-                </motion.div>
+                </section>
                 {/* =================backend==================== */}
-                <div className='flex skills-section h-fit md:h-screen' ref={backendRef} style={{ backgroundColor: '#ffd271' }}>
+                <section className='flex skills-section h-fit md:h-screen' ref={backendRef} style={{ backgroundColor: '#ffd271' }}>
                     <div
                         style={{
                             display: 'inline-block',
@@ -119,9 +121,9 @@ const Skills = () => {
                     >
                         Backend
                     </div>
-                </div>
+                </section>
                 {/* ===================a few more==================== */}
-                <div className='flex skills-section h-fit md:h-screen' ref={othersRef} style={{ backgroundColor: '#e5a9d9' }}>
+                <section className='flex skills-section h-fit md:h-screen' ref={othersRef} style={{ backgroundColor: '#e5a9d9' }}>
                     <div className='text-8xl font-extrabold rotate-180 px-4'
                         style={{
                             writingMode: 'vertical-lr',
@@ -147,7 +149,7 @@ const Skills = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </section>
             </motion.div>
         </>
     )

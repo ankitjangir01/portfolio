@@ -22,7 +22,7 @@ const Education = () => {
     }
 
     return (
-        <div className='hero-bar'>
+        <div className='hero-bar' style={{backgroundImage: 'linear-gradient(45deg, #ff7c7c, #fe7eff, #e8a8ff)'}}>
             <span className=' flex items-center cursor-pointer overflow-hidden p-2'
                 onClick={() => { eduState === "beforeClick" ? setEduState("afterClick") : setEduState("beforeClick") }}
             >
