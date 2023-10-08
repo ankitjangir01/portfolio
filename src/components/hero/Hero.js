@@ -48,7 +48,7 @@ const Hero = () => {
                             ANKIT JANGIR
                         </motion.div>
 
-                        {/* ============== IDE Card + Social Media ========================== */}
+                        {/* ============== IDE Card ========================== */}
                         <motion.div
                             initial={{
                                 opacity: 0,
@@ -73,28 +73,6 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            {/* ============== IDE Card + Social Media ========================== */}
-            <motion.div
-                initial={{
-                    opacity: 0,
-                    y: 50
-                }}
-                animate={{
-                    opacity: 1,
-                    y: 0
-                }}
-                transition={{
-                    type: 'spring',
-                    stiffness: 120,
-                    originX: 0,
-                    delay: .5,
-                    duration: 1
-                }}
-            >
-                <div style={{ zIndex: 1, position: 'relative', marginTop: '16px', display: 'inline-block' }}>
-                    <IDECard />
-                </div>
-            </motion.div>
             <Education />
             <Projects />
             <Coding />
