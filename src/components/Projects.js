@@ -16,8 +16,8 @@ const Projects = () => {
         },
         true: {
             backgroundColor: '#ffffff',
-            width: '90vw',
-            height: '90vh',
+            width: '70vw',
+            height: '70vh',
             border: 'solid 12px',
             transition: {
                 scrollY: 400

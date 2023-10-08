@@ -32,7 +32,7 @@ const ProjectsParallax = (props) => {
         const secInView = useInView(ref);
 
         return (
-            <section className="flex h-full items-center justify-around p-6 text-2xl font-normal">
+            <section className="flex flex-col sm:flex-row h-full items-center justify-around p-6 text-2xl font-normal">
                 <a href={live} target='_blank' onClick={(e) => e.stopPropagation()}>
                     <motion.div
                         style={{
@@ -51,7 +51,7 @@ const ProjectsParallax = (props) => {
 
                     </motion.div>
                 </a>
-                <div className='flex items-center justify-center p-4 h-full' ref={ref}>
+                <div className='flex items-center justify-center h-full' ref={ref}>
                     <img src={src} alt="project screenshot" className='max-h-full m-4' style={{ boxShadow: "#00000059 5px 5px 25px" }} />
                 </div>
                 <a href={repo} target='_blank' onClick={(e) => e.stopPropagation()}>
