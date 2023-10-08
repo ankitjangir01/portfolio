@@ -50,7 +50,7 @@ const Contact = () => {
                 <a href='https://www.twitter.com/AnkitJangir01' target='_blank' className='m-2 p-1  hover:shadow-lg'>
                     <img src={twitter} style={{ width: '2em', display: 'inline-block' }} />
                 </a>
-                <a href='mailto:ankitjangirnice+pw@gmail.com' target='_blank' className='m-2 p-1  hover:shadow-lg'>
+                <a href='mailto:ankitjangirnice+pw@gmail.com' className='m-2 p-1  hover:shadow-lg'>
                     <img src={email} style={{ width: '2.1em', display: 'inline-block' }} />
                 </a>
             </div>
