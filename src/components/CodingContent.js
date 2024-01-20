@@ -31,7 +31,7 @@ const CodingContent = (props) => {
     const { scrollYProgress } = useScroll({ container: ref })
 
     const Image = ({ src, link }) => {
-        const ref = useRef(null);
+        const imageRef = useRef(null);
         const secInView = useInView(ref);
 
         return (
@@ -54,7 +54,7 @@ const CodingContent = (props) => {
 
                     </motion.div>
                 </a>
-                <div className='flex items-center justify-center sm:p-4 h-full' ref={ref}>
+                <div className='flex items-center justify-center sm:p-4 h-full' ref={imageRef}>
                     <img src={src} alt="project screenshot" className='max-h-full m-4' style={{ boxShadow: "#00000059 5px 5px 25px" }} />
                 </div>
                 <a href={link} target='_blank' onClick={(e) => e.stopPropagation()}>

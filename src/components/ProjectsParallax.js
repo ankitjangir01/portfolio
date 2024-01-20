@@ -28,7 +28,7 @@ const ProjectsParallax = (props) => {
     const { scrollYProgress } = useScroll({ container: ref })
 
     const Image = ({ src, live, repo }) => {
-        const ref = useRef(null);
+        const imageRef = useRef(null);
         const secInView = useInView(ref);
 
         return (
@@ -51,7 +51,7 @@ const ProjectsParallax = (props) => {
 
                     </motion.div>
                 </a>
-                <div className='flex items-center justify-center h-full' ref={ref}>
+                <div className='flex items-center justify-center h-full' ref={imageRef}>
                     <img src={src} alt="project screenshot" className='max-h-full m-4' style={{ boxShadow: "#00000059 5px 5px 25px" }} />
                 </div>
                 <a href={repo} target='_blank' onClick={(e) => e.stopPropagation()}>
@@ -78,8 +78,8 @@ const ProjectsParallax = (props) => {
     return (
         <div className={`parallax-gutter p-4 overflow-scroll h-full ${props.open ? "" : "invisible"}`} ref={ref}>
             <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
-            {projectArr.map(({ image, live, repo }) => (
-                <Image src={image} live={live} repo={repo} />
+            {projectArr.map(({ image, live, repo }, index) => (
+                <Image key={index} src={image} live={live} repo={repo} />
             ))}
         </div>
     )

@@ -14,6 +14,7 @@ import Background from './Background'
 import Projects from '../Projects'
 import Coding from '../Coding'
 import Contact from '../Contact'
+import Resume from '../Resume'
 
 const Hero = () => {
     const [desktopWarnOpen, setDesktopWarnOpen] = useState(true);
@@ -26,6 +27,9 @@ const Hero = () => {
                 </Alert>
                 <div className='flex h-screen'>
                     <Background />
+                    <div className='absolute right-0 p-12'>
+                        <Resume />
+                    </div>
                     <div className='hero-text flex-auto mx-auto items-center' style={{ 'margin': 'auto' }}>
                         <motion.div
                             initial={{
