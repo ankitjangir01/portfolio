@@ -22,12 +22,12 @@ const Hero = () => {
     return (
         <>
             <div className='bg-[#bf58ff]'>
-                <Alert color="amber" className='sm:hidden text-white absolute z-[1]' open={desktopWarnOpen} onClose={() => setDesktopWarnOpen(false)}>
+                {/* <Alert color="amber" className='sm:hidden text-white absolute z-[1]' open={desktopWarnOpen} onClose={() => setDesktopWarnOpen(false)}>
                     view in desktop for best experience
-                </Alert>
+                </Alert> */}
                 <div className='flex h-screen'>
                     <Background />
-                    <div className='absolute right-0 p-12'>
+                    <div className='absolute right-0 p-1 md:p-6'>
                         <Resume />
                     </div>
                     <div className='hero-text flex-auto mx-auto items-center' style={{ 'margin': 'auto' }}>
@@ -47,7 +47,7 @@ const Hero = () => {
                                 delay: 0.2,
                                 duration: 1
                             }}
-                            className='text-8xl md:text-9xl font-extrabold my-auto inline-block z-[1] relative'
+                            className='text-6xl md:text-9xl font-extrabold my-auto inline-block z-[1] relative'
                         >
                             ANKIT JANGIR
                         </motion.div>
@@ -70,7 +70,7 @@ const Hero = () => {
                                 duration: 1
                             }}
                         >
-                            <div style={{ zIndex: 1, position: 'relative', margin: '8px', display: 'inline-block' }}>
+                            <div style={{ zIndex: 1, display: 'inline-block' }} className='relative m-5'>
                                 <IDECard />
                             </div>
                         </motion.div>

@@ -4,7 +4,7 @@
 
 @layer components{
   .hero-bar{
-    @apply flex justify-center text-4xl sm:text-6xl font-extrabold p-4 md:p-8;
+    @apply flex justify-center text-4xl sm:text-6xl font-extrabold pt-[120px] pb-[120px];
   }
 }
 

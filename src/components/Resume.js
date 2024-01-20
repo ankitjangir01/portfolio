@@ -8,6 +8,8 @@ const Resume = () => {
     const handleDownload = async () => {
         setLoading(true);
 
+        window.open(RESUME_DOWNLOAD_URL)
+
         try {
             const modifiedPdfBuffer = await replaceTextInPdf(RESUME_DOWNLOAD_URL, '+917062712600', '-hidden-');
 

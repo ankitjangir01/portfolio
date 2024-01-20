@@ -35,7 +35,7 @@ const CodingContent = (props) => {
         const secInView = useInView(ref);
 
         return (
-            <section className="flex flex-col sm:flex-row h-full items-center justify-around p-2 sm:p-6 text-2xl font-normal">
+            <section className="flex flex-col sm:flex-row h-full items-center justify-around p-2 pt-8 sm:p-6 text-2xl font-normal mb-6">
                 <a href={link} target='_blank' onClick={(e) => e.stopPropagation()}>
                     <motion.div
                         style={{

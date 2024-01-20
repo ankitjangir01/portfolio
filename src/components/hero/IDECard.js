@@ -4,7 +4,7 @@ import './../../index.css'
 
 const IDECard = () => {
     return (
-        <div className='IDECard'>
+        <div className='IDECard text-sm sm:text-base'>
             <p><span style={{ 'color': '#fc2403' }}>const</span> <span style={{ 'color': '#00a2c2' }}>showHeadline</span> = (<span style={{ 'color': '#00a2c2' }}>name</span>) =&gt; &#123;</p>
             <p style={{ 'textIndent': 26 }}><span style={{ 'color': '#02ba1a' }}>console.log</span>(`<span style={{ 'color': '#eba400' }}>$&#123;</span><span style={{ 'color': '#00a2c2' }}>name</span><span style={{ 'color': '#eba400' }}>&#125;</span> is a frontend heavy, full-stack developer`)</p>
             <p style={{ 'textIndent': 26 }}><span style={{ 'color': '#02ba1a' }}>console.log</span>("
