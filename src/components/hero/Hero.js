@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import hero from './../../assets/hero.png'
-import IDECard from './IDECard.js'
+import IDECard from './IDECard'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import Skills from './Skills'
@@ -15,7 +15,7 @@ import Projects from '../Projects'
 import Coding from '../Coding'
 import Contact from '../Contact'
 import Resume from '../Resume'
-import QuickViewDialog from '../QuickViewDialog.js'
+import Stats from '../stats/Stats'
 
 const Hero = () => {
     const [desktopWarnOpen, setDesktopWarnOpen] = useState(true);
@@ -31,11 +31,11 @@ const Hero = () => {
     const getGreeting = () => {
         const hours = new Date().getHours();
         if (hours < 12) {
-          return "Good Morning!";
+          return "Good Morning! 🙋🏻‍♂️";
         } else if (hours < 17) {
-          return "Good Afternoon!";
+          return "Good Afternoon! 🙋🏻‍♂️";
         } else {
-          return "Good Evening!";
+          return "Good Evening! 🙋🏻‍♂️";
         }
       };
 
@@ -47,7 +47,7 @@ const Hero = () => {
                 </Alert> */}
                 <div className='flex h-screen'>
                     <Background />
-                    <div className='absolute right-0 p-1 md:p-6'>
+                    <div className='absolute right-0 p-1 md:p-6 hidden sm:block'>
                         <Resume />
                     </div>
                     <div className='hero-text flex-auto mx-auto items-center flex flex-col' style={{ 'margin': 'auto' }}>
@@ -126,6 +126,7 @@ const Hero = () => {
             <Coding />
             <Skills />
             <Contact />
+            {/* <Stats /> */}
         </>
     )
 }

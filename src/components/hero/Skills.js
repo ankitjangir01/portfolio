@@ -8,6 +8,7 @@ import tailwindcss from './../../assets/tailwindcss.svg'
 import html5 from './../../assets/html5.svg'
 import css3 from './../../assets/css3.svg'
 import javascriptes6 from './../../assets/javascriptes6.svg'
+import typescript from './../../assets/typescript.svg'
 import nodejs from './../../assets/nodejs.svg'
 import expressjs from './../../assets/expressjs.svg'
 import springboot from './../../assets/springboot.svg'
@@ -20,8 +21,6 @@ import git from './../../assets/git.svg'
 import github from './../../assets/github.svg'
 import vscode from './../../assets/vscode.svg'
 import { motion, useInView } from 'framer-motion'
-import downArrow from './../../assets/down-arrow.svg'
-import useAutoScroll from '../../hooks/useAutoScroll.hook'
 
 const Skills = () => {
     const [showSkills, setShowSkills] = useState(true);
@@ -44,13 +43,14 @@ const Skills = () => {
         { id: 5, art: framermotion, title: 'Framer Motion', level: 5 },
         { id: 6, art: html5, title: 'HTML5', level: 5 },
         { id: 7, art: css3, title: 'CSS3', level: 5 },
-        { id: 8, art: javascriptes6, title: 'JavaScript ES6', level: 5 }
+        { id: 8, art: javascriptes6, title: 'JavaScript ES6', level: 5 },
+        { id: 9, art: typescript, title: 'Typescript', level: 5 },
     ]
 
     const backend = [
         { id: 1, art: nodejs, title: 'Node.js', level: 5 },
         { id: 2, art: expressjs, title: 'Express.js', level: 5 },
-        { id: 3, art: springboot, title: 'Spring Boot', level: 3 },
+        // { id: 3, art: springboot, title: 'Spring Boot', level: 3 },
         // { id: 4, art: mybatis, title: 'My Batis', level: 3 },
         { id: 5, art: mongodb, title: 'MongoDB', level: 5 },
         { id: 6, art: sql, title: 'SQL', level: 4 }
@@ -67,16 +67,16 @@ const Skills = () => {
 
     return (
         <>
-            <div className='hero-bar' style={{ backgroundColor: '#9acd32', borderBottom: 'dasheds'}}>
+            <div className='hero-bar p-12 md:pt-[80px]' style={{ backgroundColor: '#9acd32', lineHeight: '1rem'}}>
                 <span className='flex-col md:flex-row mx-auto flex align-middle cursor-pointer'>
-                    Technologies I Use
-                    <img src={downArrow} style={{ height: '1.3em' }} />
+                    Tech I Use 👨🏻‍💻
+                    {/* <img src={downArrow} style={{ height: '1.3em' }} /> */}
                 </span>
             </div>
             <motion.div className="skills-container overflow-hidden">
                 {/* ==============frontend================= */}
                 <section className='flex skills-section h-fit md:h-screen' ref={frontendRef} style={{ backgroundColor: '#9acd32' }}>
-                    <div className='text-8xl font-extrabold rotate-180 px-4'
+                    <div className='text-6xl sm:text-8xl font-extrabold rotate-180 px-4'
                         style={{
                             writingMode: 'vertical-lr',
                             transform: frontendInView ? "none" : "translateX(-200px)",
@@ -92,9 +92,12 @@ const Skills = () => {
                         opacity: frontendInView ? 1 : 0,
                         transition: "all 1s",
                         transitionDelay: '500ms',
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '1em',
                     }}>
                         {frontend.map(skill => (
-                            <div className='p-6 sm:p-10 inline-block w-[130px] sm:w-[200px]'>
+                            <div className='p-2 sm:p-10 inline-block w-[70px] sm:w-[200px]'>
                                 <img src={skill.art} alt={skill.title} />
                                 <h3>{skill.title}</h3>
                             </div>
@@ -102,7 +105,7 @@ const Skills = () => {
                     </div>
                 </section>
                 {/* =================backend==================== */}
-                <section className='flex skills-section h-fit md:h-screen' ref={backendRef} style={{ backgroundColor: '#ffd271' }}>
+                <section className='flex skills-section h-fit md:h-screen py-16 md:py-0' ref={backendRef} style={{ backgroundColor: '#ffd271' }}>
                     <div
                         style={{
                             display: 'inline-block',
@@ -110,16 +113,19 @@ const Skills = () => {
                             opacity: backendInView ? 1 : 0,
                             transition: "all 1s",
                             transitionDelay: '500ms',
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '1em',
                         }}
                         className='grow'>
                         {backend.map(skill => (
-                            <div className='p-6 sm:p-10 inline-block w-[130px] sm:w-[200px]'>
+                            <div className='p-2 sm:p-10 inline-block w-[70px] sm:w-[200px] flex flex-col justify-end gap-2'>
                                 <img src={skill.art} alt={skill.title} />
                                 <h3>{skill.title}</h3>
                             </div>
                         ))}
                     </div>
-                    <div className='text-8xl font-extrabold px-4 flex-none'
+                    <div className='text-6xl sm:text-8xl font-extrabold px-4 flex-none'
                         style={{
                             writingMode: 'vertical-lr',
                             transform: backendInView ? "none" : "translateX(200px)",
@@ -132,8 +138,8 @@ const Skills = () => {
                     </div>
                 </section>
                 {/* ===================a few more==================== */}
-                <section className='flex skills-section h-fit md:h-screen' ref={othersRef} style={{ backgroundColor: '#e5a9d9' }}>
-                    <div className='text-8xl font-extrabold rotate-180 px-4'
+                <section className='flex skills-section h-fit md:h-screen py-16 md:py-0' ref={othersRef} style={{ backgroundColor: '#e5a9d9' }}>
+                    <div className='text-6xl sm:text-8xl font-extrabold rotate-180 px-4'
                         style={{
                             writingMode: 'vertical-lr',
                             transform: othersInView ? "none" : "translateX(-200px)",
@@ -151,10 +157,13 @@ const Skills = () => {
                             opacity: othersInView ? 1 : 0,
                             transition: "all 1s",
                             transitionDelay: '500ms',
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '1em',
                         }}
                     >
                         {more.map(skill => (
-                            <div className='p-6 sm:p-10 inline-block w-[130px] sm:w-[200px]'>
+                            <div className='p-2 sm:p-10 inline-block w-[70px] sm:w-[200px] flex flex-col justify-end gap-2'>
                                 <img src={skill.art} alt={skill.title} />
                                 <h3>{skill.title}</h3>
                             </div>

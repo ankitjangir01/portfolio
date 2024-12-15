@@ -24,7 +24,7 @@ const Contact = () => {
     const variant = {
         false: {
             height: '58px',
-            width: '140px'
+            width: '170px'
         },
         true: {
             width: '300px'
@@ -32,7 +32,7 @@ const Contact = () => {
     }
 
     return (
-        <motion.div className='bg-white text-lg p-4 rounded-full fixed bottom-6 right-6 shadow-lg overflow-hidden h-min z-[2]'
+        <motion.div className='bg-white text-lg p-4 rounded-full fixed bottom-6 right-6 shadow-lg overflow-hidden h-min z-[20]'
             whileHover={{
                 scale: 1.1,
                 cursor: 'pointer'
@@ -42,7 +42,7 @@ const Contact = () => {
             animate={open.toString()}
             ref={ref}
         >
-            Contact me
+            Let's connect 🤝
             <div className='mt-4'>
                 <a href='https://www.linkedin.com/in/jangirankit' target='_blank' className='m-2 p-1 hover:shadow-lg'>
                     <img src={linkedin} style={{ width: '2.2em', display: 'inline-block' }} />
