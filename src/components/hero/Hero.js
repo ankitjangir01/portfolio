@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import hero from './../../assets/hero.png'
 import IDECard from './IDECard.js'
 import { motion } from 'framer-motion'
@@ -15,9 +15,29 @@ import Projects from '../Projects'
 import Coding from '../Coding'
 import Contact from '../Contact'
 import Resume from '../Resume'
+import QuickViewDialog from '../QuickViewDialog.js'
 
 const Hero = () => {
     const [desktopWarnOpen, setDesktopWarnOpen] = useState(true);
+    const [quickViewDialogCase, setQuickViewDialogCase] = useState("");     // leetcode | ""
+    const quickViewDialogRef = useRef(null);
+
+    const isQuickViewDialogOpen = quickViewDialogCase !== "";
+
+    const onCloseQuickViewDialog = () => {
+        setQuickViewDialogCase("");
+    }
+
+    const getGreeting = () => {
+        const hours = new Date().getHours();
+        if (hours < 12) {
+          return "Good Morning!";
+        } else if (hours < 17) {
+          return "Good Afternoon!";
+        } else {
+          return "Good Evening!";
+        }
+      };
 
     return (
         <>
@@ -30,11 +50,14 @@ const Hero = () => {
                     <div className='absolute right-0 p-1 md:p-6'>
                         <Resume />
                     </div>
-                    <div className='hero-text flex-auto mx-auto items-center' style={{ 'margin': 'auto' }}>
+                    <div className='hero-text flex-auto mx-auto items-center flex flex-col' style={{ 'margin': 'auto' }}>
+                        <div className='text-2xl font-bold mb-4'>
+                            Hi there, {getGreeting()}
+                        </div>
                         <motion.div
                             initial={{
                                 opacity: 0,
-                                y: -100
+                                y: -20
                             }}
                             animate={{
                                 opacity: 1,
@@ -47,9 +70,29 @@ const Hero = () => {
                                 delay: 0.2,
                                 duration: 1
                             }}
-                            className='text-6xl md:text-9xl font-extrabold my-auto inline-block z-[1] relative'
+                            className='text-xl md:text-2xl font-extrabold my-auto inline-block z-[1] relative'
                         >
-                            ANKIT JANGIR
+                            I am
+                        </motion.div>
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                y: -50
+                            }}
+                            animate={{
+                                opacity: 1,
+                                y: 0
+                            }}
+                            transition={{
+                                type: 'spring',
+                                stiffness: 120,
+                                originX: 0,
+                                delay: 0.2,
+                                duration: 1
+                            }}
+                            className='text-4xl md:text-7xl font-extrabold my-auto inline-block z-[1] relative'
+                        >
+                            Ankit Jangir
                         </motion.div>
 
                         {/* ============== IDE Card ========================== */}
@@ -74,10 +117,11 @@ const Hero = () => {
                                 <IDECard />
                             </div>
                         </motion.div>
+                    {/* j */}
                     </div>
                 </div>
             </div>
-            <Education />
+            {/* <Education /> */}
             <Projects />
             <Coding />
             <Skills />

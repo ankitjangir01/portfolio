@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion';
 import ProjectsParallax from './ProjectsParallax'
+import useAutoScroll from '../hooks/useAutoScroll.hook';
 
 const Projects = () => {
     const [projectsOpen, setProjectsOpen] = useState(false);
+    const projectsRef = useRef(null);
+    // useAutoScroll({ref: projectsRef});
 
     const projectsVarient = {
         false: {
@@ -35,7 +38,7 @@ const Projects = () => {
     }
 
     return (
-        <div className='hero-bar overflow-hidden' style={{ backgroundImage: 'linear-gradient(45deg, #3987ff, #9dc3ff, #84f9ff)' }}>
+        <div className='hero-bar overflow-hidden' id='test' style={{ backgroundImage: 'linear-gradient(45deg, #3987ff, #9dc3ff, #84f9ff)' }} ref={projectsRef}>
             <span className='mx-auto flex align-middle cursor-pointer items-center p-2'
                 onClick={toggleProjects}
             >

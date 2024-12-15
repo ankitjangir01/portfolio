@@ -21,6 +21,7 @@ import github from './../../assets/github.svg'
 import vscode from './../../assets/vscode.svg'
 import { motion, useInView } from 'framer-motion'
 import downArrow from './../../assets/down-arrow.svg'
+import useAutoScroll from '../../hooks/useAutoScroll.hook'
 
 const Skills = () => {
     const [showSkills, setShowSkills] = useState(true);
@@ -30,6 +31,10 @@ const Skills = () => {
     const frontendInView = useInView(frontendRef);
     const backendInView = useInView(backendRef);
     const othersInView = useInView(othersRef);
+
+    // useAutoScroll({ref: frontendRef});
+    // useAutoScroll({ref: backendRef});
+    // useAutoScroll({ref: othersRef});
 
     const frontend = [
         { id: 1, art: reactjs, title: 'ReactJS', level: 5 },
@@ -76,7 +81,8 @@ const Skills = () => {
                             writingMode: 'vertical-lr',
                             transform: frontendInView ? "none" : "translateX(-200px)",
                             opacity: frontendInView ? 1 : 0,
-                            transition: "all 1s"
+                            transition: "all 1s",
+                            transitionDelay: '300ms',
                         }}>
                         Frontend
                     </div>
@@ -84,7 +90,8 @@ const Skills = () => {
                         display: 'inline-block',
                         transform: frontendInView ? "none" : "translateX(200px)",
                         opacity: frontendInView ? 1 : 0,
-                        transition: "all 1s"
+                        transition: "all 1s",
+                        transitionDelay: '500ms',
                     }}>
                         {frontend.map(skill => (
                             <div className='p-6 sm:p-10 inline-block w-[130px] sm:w-[200px]'>
@@ -101,7 +108,8 @@ const Skills = () => {
                             display: 'inline-block',
                             transform: backendInView ? "none" : "translateX(-200px)",
                             opacity: backendInView ? 1 : 0,
-                            transition: "all 1s"
+                            transition: "all 1s",
+                            transitionDelay: '500ms',
                         }}
                         className='grow'>
                         {backend.map(skill => (
@@ -116,7 +124,8 @@ const Skills = () => {
                             writingMode: 'vertical-lr',
                             transform: backendInView ? "none" : "translateX(200px)",
                             opacity: backendInView ? 1 : 0,
-                            transition: "all 1s"
+                            transition: "all 1s",
+                            transitionDelay: '300ms',
                         }}
                     >
                         Backend
@@ -129,7 +138,8 @@ const Skills = () => {
                             writingMode: 'vertical-lr',
                             transform: othersInView ? "none" : "translateX(-200px)",
                             opacity: othersInView ? 1 : 0,
-                            transition: "all 1s"
+                            transition: "all 1s",
+                            transitionDelay: '300ms',
                         }}
                     >
                         More...
@@ -139,7 +149,8 @@ const Skills = () => {
                             display: 'inline-block',
                             transform: othersInView ? "none" : "translateX(200px)",
                             opacity: othersInView ? 1 : 0,
-                            transition: "all 1s"
+                            transition: "all 1s",
+                            transitionDelay: '500ms',
                         }}
                     >
                         {more.map(skill => (

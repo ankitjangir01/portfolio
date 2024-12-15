@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import CodingContent from './CodingContent';
+import useAutoScroll from '../hooks/useAutoScroll.hook';
 
 const Coding = () => {
     const [open, setOpen] = useState(false);
+    const ref = useRef(null);
+    // useAutoScroll({ref: ref});
 
     const varient = {
         false: {
@@ -35,7 +38,7 @@ const Coding = () => {
     }
 
     return (
-        <div className='hero-bar overflow-hidden' style={{ backgroundImage: 'linear-gradient(45deg, rgb(255 234 71), #ffe35c, rgb(255 157 53))' }}>
+        <div className='hero-bar overflow-hidden' style={{ backgroundImage: 'linear-gradient(45deg, rgb(255 234 71), #ffe35c, rgb(255 157 53))' }} ref={ref} >
             <span className='mx-auto flex align-middle cursor-pointer items-center p-2'
                 onClick={toggleCoding}
             >
