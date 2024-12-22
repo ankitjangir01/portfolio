@@ -121,12 +121,12 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
+            <Stats />
             {/* <Education /> */}
             <Projects />
             <Coding />
             <Skills />
             <Contact />
-            {/* <Stats /> */}
         </>
     )
 }
