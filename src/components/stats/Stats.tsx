@@ -41,7 +41,7 @@ const Stats = () => {
       <div className="flex items-center justify-center bg-[#0E0E10] h-[40rem] w-full">
         <TextRevealCard
           text="Wanna know something interesting? Hover here..."
-          revealText={`🤩 It's the ${visits+1}${getCountSuffix(visits+1)} time someone visiting this page`}
+          revealText={`🤩 It's the ${visits+1}${getCountSuffix(visits+1)} time someone visiting here`}
         >
           {/* <TextRevealCardTitle>
             Sometimes, you just need to see it.
