@@ -47,9 +47,9 @@ const Hero = () => {
                 </Alert> */}
                 <div className='flex h-screen'>
                     <Background />
-                    <div className='absolute right-0 p-1 md:p-6 hidden sm:block'>
-                        <Resume />
-                    </div>
+                    {/* <div className='absolute right-0 p-1 md:p-6 hidden sm:block'> */}
+                        {/* <Resume /> */}
+                    {/* </div> */}
                     <div className='hero-text flex-auto mx-auto items-center flex flex-col' style={{ 'margin': 'auto' }}>
                         <div className='text-2xl font-bold mb-4'>
                             Hi there, {getGreeting()}
