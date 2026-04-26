@@ -14,7 +14,7 @@ import Background from './Background'
 import Projects from '../Projects'
 import Coding from '../Coding'
 import Contact from '../Contact'
-import Resume from '../Resume'
+// import Resume from '../Resume'
 import Stats from '../stats/Stats'
 
 const Hero = () => {
